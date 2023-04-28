@@ -1,0 +1,21 @@
+.navigation {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 64px);
+  background-color: red;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navigation ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.open {
+  transform: translateX(0%);
+}

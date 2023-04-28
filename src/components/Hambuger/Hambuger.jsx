@@ -1,16 +1,9 @@
-import { useState } from "react";
-
 import styles from './Hamburger.module.css';
 
-const Hamburger = () => {
-  const [isActive, setIsActive] = useState(false);
-
-  function handleClick() {
-    setIsActive(!isActive);
-  }
+const Hamburger = (props) => {
 
   return (
-    <div className={`${styles.container} ${isActive ? styles.open : ""}`} onClick={handleClick}>
+    <div className={`${styles.container} ${props.isActive ? styles.open : ""}`} onClick={props.onClick}>
       <div></div>
       <div></div>
       <div></div>

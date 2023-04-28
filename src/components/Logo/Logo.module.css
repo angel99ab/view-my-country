@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap');
+
+.title {
+  font-family: 'Caveat', cursive;
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.title a {
+  color: #ff5c35;
+  text-decoration: none;
+}
