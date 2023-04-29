@@ -6,7 +6,7 @@ const MenuItem = (props) => {
 
   return (
     <li>
-      <Link to={props.to}>{props.name}</Link>
+      <Link className={styles.menuLink} to={props.to}>{props.name}</Link>
     </li>
   );
 }

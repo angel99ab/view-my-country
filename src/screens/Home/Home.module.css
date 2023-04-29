@@ -1,0 +1,38 @@
+.introduction {
+  padding: 24px 16px 0;
+}
+
+.introduction__img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.introduction__slogan {
+  margin-bottom: 48px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.introduction__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px auto;
+  width: 220px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #ff5c35;
+  border-radius: 12px;
+}
+
+.introduction__buttonOutlined {
+  color: #ff5c35;
+  background-color: #fff;
+  border: 2px solid #ff5c35;
+
+}
