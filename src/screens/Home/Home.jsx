@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 import MultipleFlagsBubble from '../../media/images/flags-different-countries-bubble-shape.png'
 
@@ -40,14 +41,15 @@ const Home = () => {
             The main function of this website is very simple, easy to use to
             explore information about the country in which you were born or
             learn something new from another country.
-            <br/>
-            <br/>
+            <br />
+            <br />
             All data is courtesy of <Link to={"https://github.com/angel99ab/view-my-country"}>Alejandro Matos</Link> from the Rest Countries project on GitLab.
-            <br/>
+            <br />
             Source code is available on <Link to={"https://github.com/angel99ab/view-my-country"}>GitHub</Link>.
           </p>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
