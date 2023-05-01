@@ -1,5 +1,5 @@
 .introduction {
-  padding: 24px 16px 0;
+  padding: 24px 16px 1px;
 }
 
 .introduction__img {
@@ -10,6 +10,10 @@
 
 .introduction__slogan {
   margin-bottom: 48px;
+}
+
+.introduction__slogan,
+.about__title {
   text-align: center;
   font-weight: 600;
 }
@@ -31,8 +35,32 @@
 }
 
 .introduction__buttonOutlined {
+  margin-bottom: 40px;
   color: #ff5c35;
   background-color: #fff;
   border: 2px solid #ff5c35;
+}
 
+.about {
+  padding: 40px 16px;
+  margin-bottom: 16px;
+}
+
+.about__title {
+  margin-top: 0;
+}
+
+.about__text {
+  font-weight: 500;
+}
+
+.about__text > a {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.about__text > a:hover,
+.about__text > a:focus {
+  color: #2a6496;
+  text-decoration: underline;
 }

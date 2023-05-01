@@ -23,14 +23,29 @@ const Home = () => {
           <Link
             className={styles.introduction__button}
             to={"/"}>
-              SEE ALL COUNTRIES
+            SEE ALL COUNTRIES
           </Link>
           <Link
             className={`${styles.introduction__button}
                         ${styles.introduction__buttonOutlined}`}
             to={"/"}>
-              RANDOM COUNTRY
+            RANDOM COUNTRY
           </Link>
+        </section>
+        <section className={styles.about}>
+          <h2 className={styles.about__title}>
+            About this project
+          </h2>
+          <p className={styles.about__text}>
+            The main function of this website is very simple, easy to use to
+            explore information about the country in which you were born or
+            learn something new from another country.
+            <br/>
+            <br/>
+            All data is courtesy of <Link to={"https://github.com/angel99ab/view-my-country"}>Alejandro Matos</Link> from the Rest Countries project on GitLab.
+            <br/>
+            Source code is available on <Link to={"https://github.com/angel99ab/view-my-country"}>GitHub</Link>.
+          </p>
         </section>
       </main>
     </>
