@@ -35,19 +35,20 @@
 }
 
 .introduction__buttonOutlined {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   color: #ff5c35;
   background-color: #fff;
   border: 2px solid #ff5c35;
 }
 
 .about {
-  padding: 40px 16px;
+  padding: 32px 16px;
   margin-bottom: 16px;
 }
 
 .about__title {
   margin-top: 0;
+  margin-bottom: 32px;
 }
 
 .about__text {
