@@ -1,5 +1,5 @@
 .introduction {
-  padding: 24px 16px 1px;
+  padding: 1.5em 1em 0.1em;
 }
 
 .introduction__img {
@@ -9,7 +9,8 @@
 }
 
 .introduction__slogan {
-  margin-bottom: 48px;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 
 .introduction__slogan,
@@ -19,36 +20,36 @@
 }
 
 .introduction__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1em auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  padding: 1.5em;
   width: 80%;
-  height: 48px;
   text-align: center;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: 700;
   color: #fff;
   background-color: #ff5c35;
-  border-radius: 12px;
+  border-radius: 1em;
 }
 
 .introduction__buttonOutlined {
-  margin-bottom: 32px;
+  margin-bottom: 1em;
   color: #ff5c35;
   background-color: #fff;
   border: 2px solid #ff5c35;
 }
 
 .about {
-  padding: 32px 16px;
-  margin-bottom: 16px;
+  padding: 2em 1em;
+  margin-bottom: 1em;
 }
 
 .about__title {
   margin-top: 0;
-  margin-bottom: 32px;
+  margin-bottom: 2em;
 }
 
 .about__text {
