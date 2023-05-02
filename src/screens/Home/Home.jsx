@@ -43,7 +43,7 @@ const Home = () => {
             learn something new from another country.
             <br />
             <br />
-            All data is courtesy of <Link to={"https://github.com/angel99ab/view-my-country"}>Alejandro Matos</Link> from the Rest Countries project on GitLab.
+            All data is courtesy of <Link to={"https://gitlab.com/restcountries/restcountries"}>Alejandro Matos</Link> from the Rest Countries project on GitLab.
             <br />
             Source code is available on <Link to={"https://github.com/angel99ab/view-my-country"}>GitHub</Link>.
           </p>
