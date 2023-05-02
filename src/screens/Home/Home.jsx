@@ -23,7 +23,7 @@ const Home = () => {
           </h2>
           <Link
             className={styles.introduction__button}
-            to={"/"}>
+            to={"/countries"}>
             SEE ALL COUNTRIES
           </Link>
           <Link
