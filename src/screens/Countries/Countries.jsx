@@ -44,10 +44,6 @@ const Countries = () => {
     });
   }
 
-  if (!isLoaded) {
-    return <>loading...</>;
-  }
-
   return (
     <>
       <Header />
@@ -65,15 +61,17 @@ const Countries = () => {
             onChange={(e) => setQuery(e.target.value)}
           />
           <div className={styles.main__countries}>
-            {search(items).map((item, id) => (
-              <Card
-                key={id}
-                flagImage={item.flags.svg}
-                flagAlt={item.flags.alt}
-                name={item.name.common}
-                capital={item.capital}
-              />
-            ))}
+            {!isLoaded
+              ? <h2>loading...</h2>
+              : search(items).map((item, id) => (
+                  <Card
+                    key={id}
+                    flagImage={item.flags.svg}
+                    flagAlt={item.flags.alt}
+                    name={item.name.common}
+                    capital={item.capital}
+                  />
+                ))}
           </div>
         </div>
       </main>
