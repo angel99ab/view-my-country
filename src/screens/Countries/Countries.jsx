@@ -29,6 +29,9 @@ const Countries = () => {
       });
   }, []);
 
+  // Sort names in alphabetical order
+  items.sort((a, b) => a.name.common.localeCompare(b.name.common));
+
   function search(items) {
     return items.filter((item) => {
       if (item.region === filterParam) {
