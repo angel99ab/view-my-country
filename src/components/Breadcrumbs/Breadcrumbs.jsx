@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import styles from './Breadcrumbs.module.css';
 
 const Breadcrumbs = (props) => {

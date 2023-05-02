@@ -1,6 +1,10 @@
 @import-normalize;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root {
+  font-size: 16px;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -12,9 +16,13 @@ body, #root {
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+input {
+  font-family: 'Inter', sans-serif;
 }
 
 code {
