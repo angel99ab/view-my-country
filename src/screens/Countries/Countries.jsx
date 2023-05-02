@@ -14,8 +14,7 @@ const Countries = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   const [query, setQuery] = useState("");
-  const [searchParam] = useState(["capital", "name", "numericCode"]);
-  const [filterParam, setFilterParam] = useState(["All"]);
+  const [searchParam] = useState(["name"]);
 
   useEffect(() => {
     axios.get('https://restcountries.com/v3.1/all')
@@ -34,25 +33,14 @@ const Countries = () => {
 
   function search(items) {
     return items.filter((item) => {
-      if (item.region === filterParam) {
-        return searchParam.some((newItem) => {
-          return (
-            item[newItem]
-              .toString()
-              .toLowerCase()
-              .indexOf(query.toLowerCase()) > -1
-          );
-        });
-      } else if (filterParam === "All") {
-        return searchParam.some((newItem) => {
-          return (
-            item[newItem]
-              .toString()
-              .toLowerCase()
-              .indexOf(query.toLowerCase()) > -1
-          );
-        });
-      }
+      return searchParam.some((newItem) => {
+        return (
+          item[newItem].common
+            .toString()
+            .toLowerCase()
+            .indexOf(query.toLowerCase()) > -1
+        );
+      });
     });
   }
 
@@ -71,22 +59,20 @@ const Countries = () => {
         <div className={styles.main__wrapper}>
           <input
             type="search"
-            name="search-form"
-            id="search-form"
             className={styles.main__searchInput}
-            placeholder="Search by country or capital"
+            placeholder="Enter country name"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
           <div className={styles.main__countries}>
-            {items.map((item, id) => (
+            {search(items).map((item, id) => (
               <Card
                 key={id}
                 flagImage={item.flags.svg}
                 flagAlt={item.flags.alt}
                 name={item.name.common}
                 capital={item.capital}
-                />
+              />
             ))}
           </div>
         </div>
