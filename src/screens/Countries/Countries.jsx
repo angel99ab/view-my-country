@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "../../components/Header/Header";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Crumb from "../../components/Crumb/Crumb";
+import Card from "../../components/Card/Card";
 import Footer from "../../components/Footer/Footer";
 
 import styles from './Countries.module.css';
@@ -75,19 +76,14 @@ const Countries = () => {
             onChange={(e) => setQuery(e.target.value)}
           />
           <div className={styles.main__countries}>
-            {items.map((item, number) => (
-              <div className={styles.card} key={number}>
-                <div className={styles.cardImage}>
-                  <img
-                    src={item.flags.svg}
-                    alt={item.flags.alt}
-                  />
-                </div>
-                <div className={styles.cardContent}>
-                  <h2 className={styles.cardName}>{item.name.common}</h2>
-                  <p className={styles.cardCapital}>{item.capital}</p>
-                </div>
-              </div>
+            {items.map((item, id) => (
+              <Card
+                key={id}
+                flagImage={item.flags.svg}
+                flagAlt={item.flags.alt}
+                name={item.name.common}
+                capital={item.capital}
+                />
             ))}
           </div>
         </div>
