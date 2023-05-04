@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Logo from "../Logo/Logo";
 import Hamburger from "../Hambuger/Hambuger";
@@ -9,6 +9,10 @@ import styles from './Header.module.css';
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle(styles.menuOpen, isActive);
+  }, [isActive]);
 
   function handleClick() {
     setIsActive(!isActive);

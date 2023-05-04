@@ -10,3 +10,7 @@
   background-color: #fff;
   box-shadow: 0 1px 5px 0 rgba(33, 51, 67, 0.12);
 }
+
+.menuOpen {
+  overflow: hidden;
+}
