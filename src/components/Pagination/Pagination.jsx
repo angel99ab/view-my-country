@@ -1,67 +1,85 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 
 import styles from './Pagination.module.css';
 
-const Pagination = (props) => {
-  const pageNumbers = [...Array(props.totalPages + 1).keys()].slice(1)
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+  const [currentPageIndex, setCurrentPageIndex] = useState(currentPage - 1);
 
-  const nextPage = () => {
+  function handlePageClick(index) {
     window.scrollTo(0, 0);
-
-    if (props.currentPage !== props.totalPages) {
-      props.setCurrentPage(props.currentPage + 1)
-    }
+    setCurrentPageIndex(index);
+    onPageChange(index + 1);
   }
 
-  const prevPage = () => {
-    window.scrollTo(0, 0);
-
-    if (props.currentPage !== 1) {
-      props.setCurrentPage(props.currentPage - 1)
-    }
+  function renderPage(index) {
+    const isActive = currentPageIndex === index;
+    return (
+      <li
+        key={index}
+        className={styles.pagination__item}
+        onClick={() => handlePageClick(index)}
+      >
+        <button
+          type="button"
+          className={`${styles.pagination__link} ${isActive ? styles.selected : ''}`}
+        >
+          {index + 1}
+        </button>
+      </li>
+    );
   }
+
+  function renderDots(key) {
+    return (
+      <li key={key} className={styles.pagination__item}>
+        <div className={styles.pagination__dots}>...</div>
+      </li>
+    );
+  }
+
+  const pages = [];
+  let left = Math.max(1, currentPageIndex - 1);
+  let right = Math.min(totalPages - 2, currentPageIndex + 1);
+
+  if (currentPageIndex < 2 || currentPageIndex >= totalPages - 1) {
+    left = Math.max(1, currentPageIndex - 3);
+    right = Math.min(totalPages - 2, currentPageIndex + 3);
+  }
+
+  pages.push(renderPage(0));
+
+  if (left > 1) {
+    pages.push(renderDots('left-dots'));
+  }
+
+  for (let i = left; i <= right; i++) {
+    pages.push(renderPage(i));
+  }
+
+  if (right < totalPages - 2) {
+    pages.push(renderDots('right-dots'));
+  }
+
+  pages.push(renderPage(totalPages - 1));
 
   return (
     <nav className={styles.pagination}>
       <ul className={styles.pagination__list}>
-        <li className={styles.pagination__item}>
-          <Link
-            className={styles.pagination__link}
-            onClick={prevPage}
-            to={"#"}>
-            &larr;
-          </Link>
+        <li className={`${styles.pagination__item} ${currentPageIndex === 0 ? styles.disabled : ''}`}>
+          <button className={styles.pagination__link} onClick={() => handlePageClick(currentPageIndex - 1)}>
+            &#10094;
+          </button>
         </li>
-        {pageNumbers.map(pageNumber => (
-          <li
-            key={pageNumber}
-            className={`
-              ${styles.pagination__item}}
-              ${props.currentPage == pageNumber ? styles.active : ''}`}
-          >
-            <Link
-              className={styles.pagination__link}
-              onClick={() => {
-                window.scrollTo(0, 0);
-                props.setCurrentPage(pageNumber)
-              }}
-              to={"#"}>
-              {pageNumber}
-            </Link>
-          </li>
-        ))}
-        <li className={styles.pagination__item}>
-          <Link
-            className={styles.pagination__link}
-            onClick={nextPage}
-            to={"#"}>
-            &rarr;
-          </Link>
+        {pages}
+        <li className={`${styles.pagination__item} ${currentPageIndex === totalPages - 1 ? styles.disabled : ''}`}>
+          <button className={styles.pagination__link} onClick={() => handlePageClick(currentPageIndex + 1)}>
+            &#10095;
+          </button>
         </li>
       </ul>
     </nav>
-  )
+  );
 }
 
 export default Pagination

@@ -56,17 +56,6 @@ const AllCountries = () => {
     });
   }
 
-
-  const onPageChanged = (data) => {
-    const { allCountries } = this.state;
-    const { currentPage, totalPages, pageLimit } = data;
-
-    const offset = (currentPage - 1) * pageLimit;
-    const currentCountries = allCountries.slice(offset, offset + pageLimit);
-
-    this.setState({ currentPage, currentCountries, totalPages });
-  };
-
   return (
     <>
       <Header />
@@ -100,7 +89,7 @@ const AllCountries = () => {
         <Pagination
           totalPages={totalPages}
           currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
+          onPageChange={setCurrentPage}
         />
       </main>
       <Footer />
