@@ -68,11 +68,20 @@
   list-style: none;
 }
 
+.pagination__list .pagination__item:first-child .pagination__link {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.pagination__list .pagination__item:last-child .pagination__link {
+  margin-left: auto;
+  margin-right: 0;
+}
+
 .pagination__item {
   width: 38px;
   height: 32px;
 }
-
 
 .pagination__link {
   display: block;
