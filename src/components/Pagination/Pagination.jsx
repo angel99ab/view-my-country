@@ -7,6 +7,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const [currentPageIndex, setCurrentPageIndex] = useState(currentPage - 1);
 
   function handlePageClick(index) {
+    if (index < 0 || index > totalPages - 1) {
+      return null
+    }
+
     window.scrollTo(0, 0);
     setCurrentPageIndex(index);
     onPageChange(index + 1);
@@ -66,14 +70,20 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   return (
     <nav className={styles.pagination}>
       <ul className={styles.pagination__list}>
-        <li className={`${styles.pagination__item} ${currentPageIndex === 0 ? styles.disabled : ''}`}>
-          <button className={styles.pagination__link} onClick={() => handlePageClick(currentPageIndex - 1)}>
+        <li className={styles.pagination__item}>
+          <button
+            className={`${styles.pagination__link} ${currentPageIndex === 0 ? styles.disabled : ''}`}
+            onClick={() => handlePageClick(currentPageIndex - 1)}
+          >
             &#10094;
           </button>
         </li>
         {pages}
-        <li className={`${styles.pagination__item} ${currentPageIndex === totalPages - 1 ? styles.disabled : ''}`}>
-          <button className={styles.pagination__link} onClick={() => handlePageClick(currentPageIndex + 1)}>
+        <li className={styles.pagination__item}>
+          <button
+            className={`${styles.pagination__link} ${currentPageIndex === totalPages - 1 ? styles.disabled : ''}`}
+            onClick={() => handlePageClick(currentPageIndex + 1)}
+          >
             &#10095;
           </button>
         </li>

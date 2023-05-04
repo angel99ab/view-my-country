@@ -113,3 +113,8 @@
 .selected:hover {
   background-color: rgba(0, 0, 0, 0.12);
 }
+
+.disabled {
+  opacity: 0.25;
+  cursor: default
+}
