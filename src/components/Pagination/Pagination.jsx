@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
 
 import styles from './Pagination.module.css';
 
@@ -8,7 +7,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
   function handlePageClick(index) {
     if (index < 0 || index > totalPages - 1) {
-      return null
+      return null;
     }
 
     window.scrollTo(0, 0);
@@ -25,8 +24,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         onClick={() => handlePageClick(index)}
       >
         <button
-          type="button"
-          className={`${styles.pagination__link} ${isActive ? styles.selected : ''}`}
+          type='button'
+          className={`${styles.pagination__link} ${
+            isActive ? styles.selected : ''
+          }`}
         >
           {index + 1}
         </button>
@@ -72,7 +73,9 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       <ul className={styles.pagination__list}>
         <li className={styles.pagination__item}>
           <button
-            className={`${styles.pagination__link} ${currentPageIndex === 0 ? styles.disabled : ''}`}
+            className={`${styles.pagination__link} ${
+              currentPageIndex === 0 ? styles.disabled : ''
+            }`}
             onClick={() => handlePageClick(currentPageIndex - 1)}
           >
             &#10094;
@@ -81,7 +84,9 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         {pages}
         <li className={styles.pagination__item}>
           <button
-            className={`${styles.pagination__link} ${currentPageIndex === totalPages - 1 ? styles.disabled : ''}`}
+            className={`${styles.pagination__link} ${
+              currentPageIndex === totalPages - 1 ? styles.disabled : ''
+            }`}
             onClick={() => handlePageClick(currentPageIndex + 1)}
           >
             &#10095;
@@ -90,6 +95,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       </ul>
     </nav>
   );
-}
+};
 
-export default Pagination
+export default Pagination;

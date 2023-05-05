@@ -98,7 +98,7 @@
 }
 
 .pagination__link:hover {
-  background-color: rgba(0, 0, 0, 0.04)
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .pagination__dots {
@@ -125,5 +125,5 @@
 
 .disabled {
   opacity: 0.25;
-  cursor: default
+  cursor: default;
 }

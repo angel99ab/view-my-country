@@ -9,8 +9,8 @@ import './App.css';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/countries" element={<AllCountries />}></Route>
+      <Route path='/' element={<Home />}></Route>
+      <Route path='/countries' element={<AllCountries />}></Route>
     </Routes>
   );
 }

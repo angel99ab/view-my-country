@@ -1,21 +1,20 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import Header from "../../components/Header/Header";
-import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import Crumb from "../../components/Crumb/Crumb";
-import Card from "../../components/Card/Card";
-import Pagination from "../../components/Pagination/Pagination";
-import Footer from "../../components/Footer/Footer";
+import Header from '../../components/Header/Header';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import Crumb from '../../components/Crumb/Crumb';
+import Card from '../../components/Card/Card';
+import Pagination from '../../components/Pagination/Pagination';
+import Footer from '../../components/Footer/Footer';
 
 import styles from './AllCountries.module.css';
 
 const AllCountries = () => {
-  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [countries, setCountries] = useState([]);
-  const [query, setQuery] = useState("");
-  const [searchParam] = useState(["name"]);
+  const [query, setQuery] = useState('');
+  const [searchParam] = useState(['name']);
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,26 +22,30 @@ const AllCountries = () => {
 
   const indexOfLastCountry = currentPage * countriesPerPage;
   const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
-  const currentCountries = countries.slice(indexOfFirstCountry, indexOfLastCountry);
-  const totalPages = Math.ceil(countries.length / countriesPerPage)
+  const currentCountries = countries.slice(
+    indexOfFirstCountry,
+    indexOfLastCountry
+  );
+  const totalPages = Math.ceil(countries.length / countriesPerPage);
 
   useEffect(() => {
-    axios.get('https://restcountries.com/v3.1/all')
+    axios
+      .get('https://restcountries.com/v3.1/all')
       .then(function (response) {
         setIsLoaded(true);
         setCountries(
           response.data.sort((a, b) =>
-            a.name.common.localeCompare(b.name.common))
+            a.name.common.localeCompare(b.name.common)
+          )
         );
       })
       .catch(function (error) {
         setIsLoaded(true);
-        setError(error);
       });
   }, []);
 
   const search = (countries, currentCountries) => {
-    let type = query === "" ? currentCountries : countries
+    let type = query === '' ? currentCountries : countries;
 
     return type.filter((country) => {
       return searchParam.some((newCountry) => {
@@ -54,28 +57,29 @@ const AllCountries = () => {
         );
       });
     });
-  }
+  };
 
   return (
     <>
       <Header />
       <main className={styles.main}>
-        <Breadcrumbs lastCrumb="Countries">
-          <Crumb to="/" name="Home" />
+        <Breadcrumbs lastCrumb='Countries'>
+          <Crumb to='/' name='Home' />
         </Breadcrumbs>
         <h2 className={styles.main__title}>All countries</h2>
         <div className={styles.main__wrapper}>
           <input
-            type="search"
+            type='search'
             className={styles.main__searchInput}
-            placeholder="Enter country name"
+            placeholder='Enter country name'
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
           <div className={styles.main__countries}>
-            {!isLoaded
-              ? <h2>loading...</h2>
-              : search(countries, currentCountries).map((item, id) => (
+            {!isLoaded ? (
+              <h2>loading...</h2>
+            ) : (
+              search(countries, currentCountries).map((item, id) => (
                 <Card
                   key={id}
                   flagImage={item.flags.svg}
@@ -83,7 +87,8 @@ const AllCountries = () => {
                   name={item.name.common}
                   capital={item.capital}
                 />
-              ))}
+              ))
+            )}
           </div>
         </div>
         <Pagination
@@ -95,6 +100,6 @@ const AllCountries = () => {
       <Footer />
     </>
   );
-}
+};
 
 export default AllCountries;
