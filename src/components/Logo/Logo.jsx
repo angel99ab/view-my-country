@@ -5,7 +5,14 @@ import styles from './Logo.module.css';
 const Logo = () => {
   return (
     <h1 className={styles.title}>
-      <Link to={'/'}>ViewMyCountry</Link>
+      <Link
+        to={'/'}
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+      >
+        ViewMyCountry
+      </Link>
     </h1>
   );
 };
