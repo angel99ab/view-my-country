@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -6,8 +7,25 @@ import Footer from '../../components/Footer/Footer';
 import MultipleFlagsBubble from '../../media/images/flags-different-countries-bubble-shape.png';
 
 import styles from './Home.module.css';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
+  const [randomCountry, setRandomCountry] = useState();
+
+  useEffect(() => {
+    axios
+      .get('https://restcountries.com/v3.1/all')
+      .then(function (response) {
+        const randomNumber = Math.floor(
+          Math.random() * (response.data.length - 1)
+        );
+        setRandomCountry(response.data[randomNumber].name.common);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <>
       <Header />
@@ -27,7 +45,8 @@ const Home = () => {
           <Link
             className={`${styles.introduction__button}
                         ${styles.introduction__buttonOutlined}`}
-            to={'/'}
+            to={`/countries/${randomCountry}`}
+            state={{ originalName: randomCountry }}
           >
             RANDOM COUNTRY
           </Link>
