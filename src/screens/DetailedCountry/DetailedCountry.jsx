@@ -55,12 +55,12 @@ function DetailedCountry() {
         {!isLoaded ? (
           <h2>loading...</h2>
         ) : (
-          <>
-            <div className={styles.country}>
-              <div className={styles.country__img}>
+          <div className={styles.country}>
+            <section className={styles.country__overview}>
+              <div className={styles.overview__img}>
                 <img src={data.flags.svg} alt={data.flags.alt} />
               </div>
-              <table className={styles.country__generalInfo}>
+              <table className={styles.overview__info}>
                 <tbody>
                   <tr>
                     <th>Common</th>
@@ -92,8 +92,35 @@ function DetailedCountry() {
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </>
+            </section>
+            <section className={styles.country__codes}>
+              <h2 className={styles.codes__title}>Codes</h2>
+              <table className={styles.codes__info}>
+                <tbody>
+                  <tr>
+                    <th>ISO 3166-1 alpha-2</th>
+                    <td>{data.cca2}</td>
+                  </tr>
+                  <tr>
+                    <th>ISO 3166-1 alpha-3</th>
+                    <td>{data.cca3}</td>
+                  </tr>
+                  <tr>
+                    <th>ISO 3166-1 numeric</th>
+                    <td>{data.ccn3}</td>
+                  </tr>
+                  <tr>
+                    <th>ISO 4217 currency code</th>
+                    <td>{Object.keys(data.currencies)}</td>
+                  </tr>
+                  <tr>
+                    <th>Top level domain</th>
+                    <td>{data.tld[0]}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
         )}
       </main>
       <Footer />

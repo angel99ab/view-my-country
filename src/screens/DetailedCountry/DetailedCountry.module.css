@@ -2,22 +2,39 @@
   padding: 2.5em 1em 3em;
 }
 
+.country table tbody tr {
+  display: block;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ff5c35;
+}
+
+.country table tbody tr th {
+  min-width: 180px;
+  text-align: left;
+  color: #ff5c35;
+}
+
+.country table tbody tr:last-of-type {
+  border: none;
+}
+
 .overview {
   margin-top: 0;
   font-weight: 500;
 }
 
-.country {
+.country__overview {
   padding: 0.5em;
   border-radius: 0.75em;
 }
 
-.country__img {
+.overview__img {
   margin-bottom: 1.5em;
   text-align: center;
 }
 
-.country__img img {
+.overview__img img {
   max-width: 80%;
   min-height: 190px;
   border-radius: 0.75em;
@@ -25,28 +42,38 @@
   object-fit: cover;
 }
 
-.country__generalInfo {
+.overview__info,
+.codes__info {
   width: 100%;
-}
-
-.country__generalInfo tbody tr {
-  display: block;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid #ff5c35;
-}
-
-.country__generalInfo tbody tr th {
-  min-width: 180px;
-  text-align: left;
-  color: #ff5c35;
-}
-
-.country__generalInfo tbody tr th,
-.country__generalInfo tbody tr td {
   font-size: 0.875em;
 }
 
-.country__generalInfo tbody tr:last-of-type {
-  border: none;
+/* CODES STYLES */
+.codes__title {
+  position: relative;
+  text-align: center;
+  font-weight: 500;
+}
+
+.codes__title::before,
+.codes__title::after {
+  position: absolute;
+  top: 50%;
+  content: '';
+  height: 1px;
+  width: 30%;
+  background-color: #000;
+}
+
+.codes__title::before {
+  left: 0;
+}
+
+.codes__title::after {
+  right: 0;
+}
+
+.codes__info tbody tr td {
+  width: 100%;
+  text-align: center;
 }
