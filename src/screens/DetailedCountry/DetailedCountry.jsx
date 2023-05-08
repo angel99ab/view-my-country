@@ -73,26 +73,24 @@ function DetailedCountry() {
                   <tr>
                     <th>Common native</th>
                     <td>
-                      {
-                        data.name.nativeName[
-                          Object.keys(data.name.nativeName)[0]
-                        ].common
-                      }
+                      {data.name.nativeName?.[
+                        Object.keys(data.name.nativeName)[0]
+                      ]?.common || '-'}
                     </td>
                   </tr>
                   <tr>
                     <th>Official native</th>
                     <td>
-                      {
-                        data.name.nativeName[
-                          Object.keys(data.name.nativeName)[0]
-                        ].official
-                      }
+                      {data.name.nativeName?.[
+                        Object.keys(data.name.nativeName)[0]
+                      ]?.official || '-'}
                     </td>
                   </tr>
                   <tr>
                     <th>Native language</th>
-                    <td>{data.languages[Object.keys(data.languages)[0]]}</td>
+                    <td>
+                      {data.languages?.[Object.keys(data.languages)[0]] || '-'}
+                    </td>
                   </tr>
                   <tr>
                     <th>Population</th>
@@ -119,7 +117,11 @@ function DetailedCountry() {
                   </tr>
                   <tr>
                     <th>ISO 4217 currency code</th>
-                    <td>{Object.keys(data.currencies)}</td>
+                    <td>
+                      {data.currencies
+                        ? Object.keys(data.currencies).join(', ')
+                        : '-'}
+                    </td>
                   </tr>
                   <tr>
                     <th>Top level domain</th>
@@ -138,20 +140,23 @@ function DetailedCountry() {
                   </tr>
                   <tr>
                     <th>Subregion</th>
-                    <td>{data.subregion}</td>
+                    <td>{data.subregion ? data.subregion : '-'}</td>
                   </tr>
                   <tr>
                     <th>Capital</th>
-                    <td>{data.capital}</td>
+                    <td>{data.capital ? data.capital : '-'}</td>
                   </tr>
                   <tr>
                     <th>Demonym</th>
-                    <td>{data.demonyms.eng.f}</td>
+                    <td>{data.demonyms?.eng.f || '-'}</td>
                   </tr>
                   <tr>
                     <th>Lat/Lng</th>
                     <td>
-                      {data.capitalInfo.latlng[0]}, {data.capitalInfo.latlng[1]}
+                      {data.capitalInfo.latlng?.[0] != null &&
+                      data.capitalInfo.latlng?.[1] != null
+                        ? `${data.capitalInfo.latlng[0]}, ${data.capitalInfo.latlng[1]}`
+                        : '-'}
                     </td>
                   </tr>
                   <tr>
