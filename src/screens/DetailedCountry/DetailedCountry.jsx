@@ -27,23 +27,6 @@ function DetailedCountry() {
       });
   }, []);
 
-  const generateNativeNames = () => {
-    return Object.keys(data.name.nativeName).map((nativeN) => {
-      return (
-        <>
-          <tr key={`${nativeN}-common`}>
-            <th>Native name</th>
-            <td>{data.name.nativeName[nativeN].common}</td>
-          </tr>
-          <tr key={`${nativeN}-official`}>
-            <th>Native official</th>
-            <td>{data.name.nativeName[nativeN].official}</td>
-          </tr>
-        </>
-      );
-    });
-  };
-
   return (
     <>
       <Header />
