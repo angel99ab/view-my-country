@@ -4,8 +4,7 @@
 
 .country table tbody tr {
   display: block;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding: 0.75em 0;
   border-bottom: 1px solid #ff5c35;
 }
 
@@ -19,14 +18,14 @@
   border: none;
 }
 
+.country__overview,
+.country__codes {
+  margin-bottom: 2em;
+}
+
 .overview {
   margin-top: 0;
   font-weight: 500;
-}
-
-.country__overview {
-  padding: 0.5em;
-  border-radius: 0.75em;
 }
 
 .overview__img {
@@ -43,20 +42,23 @@
 }
 
 .overview__info,
-.codes__info {
+.codes__info,
+.geography__info {
   width: 100%;
   font-size: 0.875em;
 }
 
-/* CODES STYLES */
-.codes__title {
+.codes__title,
+.geography__title {
   position: relative;
   text-align: center;
   font-weight: 500;
 }
 
 .codes__title::before,
-.codes__title::after {
+.codes__title::after,
+.geography__title::before,
+.geography__title::after {
   position: absolute;
   top: 50%;
   content: '';
@@ -65,15 +67,22 @@
   background-color: #000;
 }
 
-.codes__title::before {
+.codes__title::before,
+.geography__title::before {
   left: 0;
 }
 
-.codes__title::after {
+.codes__title::after,
+.geography__title::after {
   right: 0;
 }
 
 .codes__info tbody tr td {
   width: 100%;
   text-align: center;
+}
+
+.geography__title::before,
+.geography__title::after {
+  width: 25%;
 }

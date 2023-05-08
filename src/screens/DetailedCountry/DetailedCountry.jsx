@@ -90,6 +90,14 @@ function DetailedCountry() {
                       }
                     </td>
                   </tr>
+                  <tr>
+                    <th>Native language</th>
+                    <td>{data.languages[Object.keys(data.languages)[0]]}</td>
+                  </tr>
+                  <tr>
+                    <th>Population</th>
+                    <td>{data.population}</td>
+                  </tr>
                 </tbody>
               </table>
             </section>
@@ -116,6 +124,39 @@ function DetailedCountry() {
                   <tr>
                     <th>Top level domain</th>
                     <td>{data.tld[0]}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section className={styles.country__geography}>
+              <h2 className={styles.geography__title}>Geography</h2>
+              <table className={styles.geography__info}>
+                <tbody>
+                  <tr>
+                    <th>Region</th>
+                    <td>{data.region}</td>
+                  </tr>
+                  <tr>
+                    <th>Subregion</th>
+                    <td>{data.subregion}</td>
+                  </tr>
+                  <tr>
+                    <th>Capital</th>
+                    <td>{data.capital}</td>
+                  </tr>
+                  <tr>
+                    <th>Demonym</th>
+                    <td>{data.demonyms.eng.f}</td>
+                  </tr>
+                  <tr>
+                    <th>Lat/Lng</th>
+                    <td>
+                      {data.capitalInfo.latlng[0]}, {data.capitalInfo.latlng[1]}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Area</th>
+                    <td>{data.area}km²</td>
                   </tr>
                 </tbody>
               </table>
