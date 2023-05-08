@@ -4,7 +4,7 @@ import axios from 'axios';
 import Header from '../../components/Header/Header';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import Crumb from '../../components/Crumb/Crumb';
-import Card from '../../components/Card/Card';
+import CountryCard from '../../components/CountryCard/CountryCard';
 import Pagination from '../../components/Pagination/Pagination';
 import Footer from '../../components/Footer/Footer';
 
@@ -19,7 +19,6 @@ const AllCountries = () => {
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const [countriesPerPage, setCountriesPerPage] = useState(10);
-
   const indexOfLastCountry = currentPage * countriesPerPage;
   const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
   const currentCountries = countries.slice(
@@ -80,12 +79,12 @@ const AllCountries = () => {
               <h2>loading...</h2>
             ) : (
               search(countries, currentCountries).map((item, id) => (
-                <Card
+                <CountryCard
                   key={id}
-                  flagImage={item.flags.svg}
-                  flagAlt={item.flags.alt}
                   name={item.name.common}
                   capital={item.capital}
+                  flagImage={item.flags.svg}
+                  flagAlt={item.flags.alt}
                 />
               ))
             )}

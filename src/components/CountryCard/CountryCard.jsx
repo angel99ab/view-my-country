@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
 
-import styles from './Card.module.css';
+import styles from './CountryCard.module.css';
 
 const Card = (props) => {
+  let formatCountryName = props.name.toLowerCase().split(' ').join('-');
+
   return (
-    // Change path when clicking in the card
-    <Link to='/' className={styles.card}>
+    <Link
+      to={`/countries/${formatCountryName}`}
+      state={{ originalName: props.name }}
+      className={styles.card}
+    >
       <div className={styles.cardImage}>
         <img src={props.flagImage} alt={props.flagAlt} />
       </div>

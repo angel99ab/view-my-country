@@ -1,0 +1,52 @@
+.main {
+  padding: 2.5em 1em 3em;
+}
+
+.overview {
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.country {
+  padding: 0.5em;
+  border-radius: 0.75em;
+}
+
+.country__img {
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.country__img img {
+  max-width: 80%;
+  min-height: 190px;
+  border-radius: 0.75em;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.country__generalInfo {
+  width: 100%;
+}
+
+.country__generalInfo tbody tr {
+  display: block;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ff5c35;
+}
+
+.country__generalInfo tbody tr th {
+  min-width: 180px;
+  text-align: left;
+  color: #ff5c35;
+}
+
+.country__generalInfo tbody tr th,
+.country__generalInfo tbody tr td {
+  font-size: 0.875em;
+}
+
+.country__generalInfo tbody tr:last-of-type {
+  border: none;
+}
