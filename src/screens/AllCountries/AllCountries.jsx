@@ -43,6 +43,10 @@ const AllCountries = () => {
       });
   }, []);
 
+  useEffect(() => {
+    setQuery('');
+  }, [currentPage]);
+
   const search = (countries, currentCountries) => {
     let type = query === '' ? currentCountries : countries;
 
