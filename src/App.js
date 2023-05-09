@@ -5,8 +5,6 @@ import Home from './screens/Home/Home';
 import AllCountries from './screens/AllCountries/AllCountries';
 import DetailedCountry from './screens/DetailedCountry/DetailedCountry';
 
-import './App.css';
-
 function App() {
   return (
     <Routes>

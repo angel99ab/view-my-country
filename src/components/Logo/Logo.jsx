@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './Logo.module.css';
 
-const Logo = () => {
+function Logo() {
   return (
     <h1 className={styles.title}>
       <Link
@@ -15,6 +15,6 @@ const Logo = () => {
       </Link>
     </h1>
   );
-};
+}
 
 export default Logo;

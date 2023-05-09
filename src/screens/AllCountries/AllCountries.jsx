@@ -10,7 +10,7 @@ import Footer from '../../components/Footer/Footer';
 
 import styles from './AllCountries.module.css';
 
-const AllCountries = () => {
+function AllCountries() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [countries, setCountries] = useState([]);
   const [query, setQuery] = useState('');
@@ -103,6 +103,6 @@ const AllCountries = () => {
       <Footer />
     </>
   );
-};
+}
 
 export default AllCountries;

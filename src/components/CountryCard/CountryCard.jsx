@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './CountryCard.module.css';
 
-const Card = (props) => {
+function Card(props) {
   let formatCountryName = props.name.toLowerCase().split(' ').join('-');
 
   return (
@@ -20,6 +20,6 @@ const Card = (props) => {
       </div>
     </Link>
   );
-};
+}
 
 export default Card;

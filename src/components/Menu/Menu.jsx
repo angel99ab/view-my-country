@@ -1,6 +1,6 @@
 import styles from './Menu.module.css';
 
-const Menu = (props) => {
+function Menu(props) {
   return (
     <nav
       className={`${styles.navigation} ${props.isActive ? styles.open : ''}`}
@@ -8,6 +8,6 @@ const Menu = (props) => {
       <ul>{props.children}</ul>
     </nav>
   );
-};
+}
 
 export default Menu;

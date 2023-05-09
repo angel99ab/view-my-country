@@ -9,7 +9,7 @@ import MultipleFlagsBubble from '../../media/images/flags-different-countries-bu
 import styles from './Home.module.css';
 import { useEffect, useState } from 'react';
 
-const Home = () => {
+function Home() {
   const [randomCountry, setRandomCountry] = useState();
 
   useEffect(() => {
@@ -76,6 +76,6 @@ const Home = () => {
       <Footer />
     </>
   );
-};
+}
 
 export default Home;

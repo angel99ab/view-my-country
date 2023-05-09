@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import styles from './Pagination.module.css';
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+function Pagination({ currentPage, totalPages, onPageChange }) {
   const [currentPageIndex, setCurrentPageIndex] = useState(currentPage - 1);
 
   function handlePageClick(index) {
@@ -95,6 +95,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       </ul>
     </nav>
   );
-};
+}
 
 export default Pagination;

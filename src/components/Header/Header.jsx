@@ -7,7 +7,7 @@ import MenuItem from '../MenuItem/MenuItem';
 
 import styles from './Header.module.css';
 
-const Header = () => {
+function Header() {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -31,6 +31,6 @@ const Header = () => {
       </Menu>
     </header>
   );
-};
+}
 
 export default Header;

@@ -1,6 +1,6 @@
 import styles from './Hamburger.module.css';
 
-const Hamburger = (props) => {
+function Hamburger(props) {
   return (
     <div
       className={`${styles.container} ${props.isActive ? styles.open : ''}`}
@@ -11,6 +11,6 @@ const Hamburger = (props) => {
       <div></div>
     </div>
   );
-};
+}
 
 export default Hamburger;
