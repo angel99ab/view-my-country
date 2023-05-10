@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  height: 48px;
+  background-color: #ff5c35;
+}
+
+.footer__license {
+  margin: 0;
+  font-size: 0.875em;
+  font-weight: 500;
+  color: #fff;
+}
