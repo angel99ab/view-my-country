@@ -36,20 +36,22 @@ function Home() {
             src={MultipleFlagsBubble}
             alt='Flags different countries bubble shape'
           />
-          <h2 className={styles.introduction__slogan}>
-            Discover the information of the country in which you were born
-          </h2>
-          <Link className={styles.introduction__button} to={'/countries'}>
-            SEE ALL COUNTRIES
-          </Link>
-          <Link
-            className={`${styles.introduction__button}
+          <div>
+            <h2 className={styles.introduction__slogan}>
+              Discover the information of the country in which you were born
+            </h2>
+            <Link className={styles.introduction__button} to={'/countries'}>
+              SEE ALL COUNTRIES
+            </Link>
+            <Link
+              className={`${styles.introduction__button}
                         ${styles.introduction__buttonOutlined}`}
-            to={`/countries/${randomCountry}`}
-            state={{ originalName: randomCountry }}
-          >
-            RANDOM COUNTRY
-          </Link>
+              to={`/countries/${randomCountry}`}
+              state={{ originalName: randomCountry }}
+            >
+              RANDOM COUNTRY
+            </Link>
+          </div>
         </section>
         <section className={styles.about}>
           <h2 className={styles.about__title}>About this project</h2>

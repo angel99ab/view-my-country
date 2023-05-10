@@ -6,11 +6,11 @@
   display: block;
   margin: 0 auto;
   width: 100%;
+  max-width: 750px;
 }
 
 .introduction__slogan {
-  margin-top: 1em;
-  margin-bottom: 2em;
+  margin: 1em auto 2em;
 }
 
 .introduction__slogan,
@@ -26,6 +26,7 @@
   margin-bottom: 1.5em;
   padding: 1.5em;
   width: 80%;
+  max-width: 350px;
   text-align: center;
   text-decoration: none;
   font-size: 0.875em;
@@ -65,4 +66,66 @@
 .about__text > a:focus {
   color: #2a6496;
   text-decoration: underline;
+}
+
+@media (min-width: 600px) {
+  .introduction__slogan {
+    margin-top: 0;
+  }
+
+  .introduction__slogan,
+  .about__title {
+    font-size: 2em;
+    width: 80%;
+  }
+
+  .about__title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about__text {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 764px) {
+  .introduction__slogan,
+  .about__title {
+    font-size: 3em;
+    margin-bottom: 1em;
+  }
+
+  .introduction__buttonOutlined {
+    margin-bottom: 2em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .introduction {
+    display: flex;
+    align-items: center;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .introduction > div {
+    max-width: 1000px;
+  }
+
+  .introduction__img {
+    max-width: 600px;
+  }
+
+  .about {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  .about__text {
+    font-size: 1.2em;
+  }
 }
