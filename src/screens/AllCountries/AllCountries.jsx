@@ -70,19 +70,19 @@ function AllCountries() {
           <Crumb to='/' name='Home' />
         </Breadcrumbs>
         <h2 className={styles.main__title}>All countries</h2>
-        <div className={styles.main__wrapper}>
-          <input
-            type='search'
-            className={styles.main__searchInput}
-            placeholder='Enter country name'
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <div className={styles.main__countries}>
-            {!isLoaded ? (
-              <h2>loading...</h2>
-            ) : (
-              search(countries, currentCountries).map((item, id) => (
+        {!isLoaded ? (
+          <h2>loading...</h2>
+        ) : (
+          <div className={styles.main__wrapper}>
+            <input
+              type='search'
+              className={styles.main__searchInput}
+              placeholder='Enter country name'
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            <div className={styles.main__countries}>
+              {search(countries, currentCountries).map((item, id) => (
                 <CountryCard
                   key={id}
                   name={item.name.common}
@@ -90,15 +90,15 @@ function AllCountries() {
                   flagImage={item.flags.svg}
                   flagAlt={item.flags.alt}
                 />
-              ))
-            )}
+              ))}
+            </div>
+            <Pagination
+              totalPages={totalPages}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
+            />
           </div>
-        </div>
-        <Pagination
-          totalPages={totalPages}
-          currentPage={currentPage}
-          onPageChange={setCurrentPage}
-        />
+        )}
       </main>
       <Footer />
     </>
