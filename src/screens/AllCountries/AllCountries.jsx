@@ -66,39 +66,41 @@ function AllCountries() {
     <>
       <Header />
       <main className={styles.main}>
-        <Breadcrumbs lastCrumb='Countries'>
-          <Crumb to='/' name='Home' />
-        </Breadcrumbs>
-        <h2 className={styles.main__title}>All countries</h2>
-        {!isLoaded ? (
-          <h2>loading...</h2>
-        ) : (
-          <div className={styles.main__wrapper}>
-            <input
-              type='search'
-              className={styles.main__searchInput}
-              placeholder='Enter country name'
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-            <div className={styles.main__countries}>
-              {search(countries, currentCountries).map((item, id) => (
-                <CountryCard
-                  key={id}
-                  name={item.name.common}
-                  capital={item.capital}
-                  flagImage={item.flags.svg}
-                  flagAlt={item.flags.alt}
-                />
-              ))}
+        <div>
+          <Breadcrumbs lastCrumb='Countries'>
+            <Crumb to='/' name='Home' />
+          </Breadcrumbs>
+          <h2 className={styles.main__title}>All countries</h2>
+          {!isLoaded ? (
+            <h2>loading...</h2>
+          ) : (
+            <div className={styles.main__wrapper}>
+              <input
+                type='search'
+                className={styles.main__searchInput}
+                placeholder='Enter country name'
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              <div className={styles.main__countries}>
+                {search(countries, currentCountries).map((item, id) => (
+                  <CountryCard
+                    key={id}
+                    name={item.name.common}
+                    capital={item.capital}
+                    flagImage={item.flags.svg}
+                    flagAlt={item.flags.alt}
+                  />
+                ))}
+              </div>
+              <Pagination
+                totalPages={totalPages}
+                currentPage={currentPage}
+                onPageChange={setCurrentPage}
+              />
             </div>
-            <Pagination
-              totalPages={totalPages}
-              currentPage={currentPage}
-              onPageChange={setCurrentPage}
-            />
-          </div>
-        )}
+          )}
+        </div>
       </main>
       <Footer />
     </>

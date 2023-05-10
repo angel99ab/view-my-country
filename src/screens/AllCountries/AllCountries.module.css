@@ -9,11 +9,6 @@
   font-weight: 500;
 }
 
-.main__wrapper {
-  max-width: 1140px;
-  margin-bottom: 2.5em;
-}
-
 .main__searchInput {
   margin-top: 0;
   margin-bottom: 3em;
@@ -41,4 +36,19 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   grid-gap: 24px 8px;
+  margin-bottom: 2.5em;
+}
+
+@media (min-width: 1000px) {
+  .main > div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main__countries {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
