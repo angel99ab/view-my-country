@@ -2,19 +2,25 @@
   padding: 2.5em 1em 3em;
 }
 
-.country table tbody tr {
+.overview__info tbody tr,
+.codes__info tbody tr,
+.geography__info tbody tr {
   display: block;
   padding: 0.75em 0;
   border-bottom: 1px solid #ff5c35;
 }
 
-.country table tbody tr th {
+.overview__info tbody tr th,
+.codes__info tbody tr th,
+.geography__info tbody tr th {
   min-width: 180px;
   text-align: left;
   color: #ff5c35;
 }
 
-.country table tbody tr:last-of-type {
+.overview__info tbody tr:last-of-type,
+.codes__info tbody tr:last-of-type,
+.geography__info tbody tr:last-of-type {
   border: none;
 }
 
@@ -34,7 +40,8 @@
 }
 
 .overview__img img {
-  max-width: 80%;
+  width: 80%;
+  max-width: 590px;
   border-radius: 0.75em;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   object-fit: contain;
@@ -84,4 +91,20 @@
 .geography__title::before,
 .geography__title::after {
   width: 25%;
+}
+
+@media (min-width: 500px) {
+  .overview__info tbody tr td,
+  .geography__info tbody tr td {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 800px) {
+  .main > div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
 }
