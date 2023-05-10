@@ -29,11 +29,6 @@ input {
   font-family: 'Inter', sans-serif;
 }
 
-/* This is for the header */
-#root {
-  padding-top: 64px;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
