@@ -1,5 +1,5 @@
 .card {
-  background-color: #eee;
+  /* background-color: #eee; */
   padding: 0px;
   text-decoration: none;
   color: #000;
@@ -11,6 +11,7 @@
 .cardImage {
   height: 150px;
   overflow: hidden;
+  box-shadow: rgba(219, 208, 214, 0.32) 2px 2px 8px 2px;
 }
 
 .cardImage img {

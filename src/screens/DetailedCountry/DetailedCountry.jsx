@@ -39,119 +39,113 @@ function DetailedCountry() {
           {!isLoaded ? (
             <h2>loading...</h2>
           ) : (
-            <div className={styles.country}>
+            <>
               <section className={styles.country__overview}>
                 <div className={styles.overview__img}>
                   <img src={data.flags.svg} alt={data.flags.alt} />
                 </div>
-                <table className={styles.overview__info}>
-                  <tbody>
-                    <tr>
-                      <th>Common</th>
-                      <td>{data.name.common}</td>
-                    </tr>
-                    <tr>
-                      <th>Official</th>
-                      <td>{data.name.official}</td>
-                    </tr>
-                    <tr>
-                      <th>Common native</th>
-                      <td>
-                        {data.name.nativeName?.[
-                          Object.keys(data.name.nativeName)[0]
-                        ]?.common || '-'}
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>Official native</th>
-                      <td>
-                        {data.name.nativeName?.[
-                          Object.keys(data.name.nativeName)[0]
-                        ]?.official || '-'}
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>Native language</th>
-                      <td>
-                        {data.languages?.[Object.keys(data.languages)[0]] ||
-                          '-'}
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>Population</th>
-                      <td>{data.population}</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className={styles.overview__info}>
+                  <h2 className={styles.overview__title}>Overview</h2>
+                  <div>
+                    <div>Common</div>
+                    <div>{data.name.common}</div>
+                  </div>
+                  <div>
+                    <div>Official</div>
+                    <div>{data.name.official}</div>
+                  </div>
+                  <div>
+                    <div>Common native</div>
+                    <div>
+                      {data.name.nativeName?.[
+                        Object.keys(data.name.nativeName)[0]
+                      ]?.common || '-'}
+                    </div>
+                  </div>
+                  <div>
+                    <div>Official native</div>
+                    <div>
+                      {data.name.nativeName?.[
+                        Object.keys(data.name.nativeName)[0]
+                      ]?.official || '-'}
+                    </div>
+                  </div>
+                  <div>
+                    <div>Native language</div>
+                    <div>
+                      {data.languages?.[Object.keys(data.languages)[0]] || '-'}
+                    </div>
+                  </div>
+                  <div>
+                    <div>Population</div>
+                    <div>{data.population}</div>
+                  </div>
+                </div>
               </section>
               <section className={styles.country__codes}>
-                <h2 className={styles.codes__title}>Codes</h2>
-                <table className={styles.codes__info}>
-                  <tbody>
-                    <tr>
-                      <th>ISO 3166-1 alpha-2</th>
-                      <td>{data.cca2}</td>
-                    </tr>
-                    <tr>
-                      <th>ISO 3166-1 alpha-3</th>
-                      <td>{data.cca3}</td>
-                    </tr>
-                    <tr>
-                      <th>ISO 3166-1 numeric</th>
-                      <td>{data.ccn3}</td>
-                    </tr>
-                    <tr>
-                      <th>ISO 4217 currency code</th>
-                      <td>
-                        {data.currencies
-                          ? Object.keys(data.currencies).join(', ')
-                          : '-'}
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>Top level domain</th>
-                      <td>{data.tld[0]}</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className={styles.codes__info}>
+                  <h2 className={styles.codes__title}>Codes</h2>
+                  <div>
+                    <div>ISO 3166-1 alpha-2</div>
+                    <div>{data.cca2}</div>
+                  </div>
+                  <div>
+                    <div>ISO 3166-1 alpha-3</div>
+                    <div>{data.cca3}</div>
+                  </div>
+                  <div>
+                    <div>ISO 3166-1 numeric</div>
+                    <div>{data.ccn3}</div>
+                  </div>
+                  <div>
+                    <div>ISO 4217 currency code</div>
+                    <div>
+                      {data.currencies
+                        ? Object.keys(data.currencies).join(', ')
+                        : '-'}
+                    </div>
+                  </div>
+                  <div>
+                    <div>Top level domain</div>
+                    <div>{data.tld[0]}</div>
+                  </div>
+                </div>
               </section>
               <section className={styles.country__geography}>
-                <h2 className={styles.geography__title}>Geography</h2>
-                <table className={styles.geography__info}>
-                  <tbody>
-                    <tr>
-                      <th>Region</th>
-                      <td>{data.region}</td>
-                    </tr>
-                    <tr>
-                      <th>Subregion</th>
-                      <td>{data.subregion ? data.subregion : '-'}</td>
-                    </tr>
-                    <tr>
-                      <th>Capital</th>
-                      <td>{data.capital ? data.capital : '-'}</td>
-                    </tr>
-                    <tr>
-                      <th>Demonym</th>
-                      <td>{data.demonyms?.eng.f || '-'}</td>
-                    </tr>
-                    <tr>
-                      <th>Lat/Lng</th>
-                      <td>
-                        {data.capitalInfo.latlng?.[0] != null &&
-                        data.capitalInfo.latlng?.[1] != null
-                          ? `${data.capitalInfo.latlng[0]}, ${data.capitalInfo.latlng[1]}`
-                          : '-'}
-                      </td>
-                    </tr>
-                    <tr>
-                      <th>Area</th>
-                      <td>{data.area}km²</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className={styles.geography__info}>
+                  <h2 className={styles.geography__title}>Geography</h2>
+                  <div>
+                    <div>Region</div>
+                    <div>{data.region}</div>
+                  </div>
+                  <div>
+                    <div>Subregion</div>
+                    <div>{data.subregion ? data.subregion : '-'}</div>
+                  </div>
+                  <div>
+                    <div>Capital</div>
+                    <div>{data.capital ? data.capital : '-'}</div>
+                  </div>
+                  <div>
+                    <div>Demonym</div>
+                    <div>{data.demonyms?.eng.f || '-'}</div>
+                  </div>
+                  <div>
+                    <div>Lat/Lng</div>
+                    <div>
+                      {data.capitalInfo.latlng?.[0] != null &&
+                      data.capitalInfo.latlng?.[1] != null
+                        ? `${data.capitalInfo.latlng[0]}, ${data.capitalInfo.latlng[1]}`
+                        : '-'}
+                    </div>
+                  </div>
+                  <div>
+                    <div>Area</div>
+                    <div>{data.area}km²</div>
+                  </div>
+                </div>
               </section>
-            </div>
+            </>
           )}
         </div>
       </main>

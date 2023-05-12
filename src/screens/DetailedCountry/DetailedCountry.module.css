@@ -2,36 +2,11 @@
   padding: 2.5em 1em 3em;
 }
 
-.overview__info tbody tr,
-.codes__info tbody tr,
-.geography__info tbody tr {
-  display: block;
-  padding: 0.75em 0;
-  border-bottom: 1px solid #ff5c35;
-}
-
-.overview__info tbody tr th,
-.codes__info tbody tr th,
-.geography__info tbody tr th {
-  min-width: 180px;
-  text-align: left;
-  color: #ff5c35;
-}
-
-.overview__info tbody tr:last-of-type,
-.codes__info tbody tr:last-of-type,
-.geography__info tbody tr:last-of-type {
-  border: none;
-}
-
-.country__overview,
-.country__codes {
-  margin-bottom: 2em;
-}
-
-.overview {
-  margin-top: 0;
-  font-weight: 500;
+.main > div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  max-width: 800px;
 }
 
 .overview__img {
@@ -50,61 +25,51 @@
 .overview__info,
 .codes__info,
 .geography__info {
-  width: 100%;
-  font-size: 0.875em;
+  border-radius: 8px;
+  box-shadow: rgba(219, 208, 214, 0.32) 2px 2px 8px 2px;
+  margin-bottom: 40px;
 }
 
+.overview__title,
 .codes__title,
 .geography__title {
-  position: relative;
+  margin: 0;
+  padding: 20px;
   text-align: center;
   font-weight: 500;
 }
 
-.codes__title::before,
-.codes__title::after,
-.geography__title::before,
-.geography__title::after {
-  position: absolute;
-  top: 50%;
-  content: '';
-  height: 1px;
-  width: 30%;
-  background-color: #000;
+.overview__title,
+.overview__info > div,
+.codes__title,
+.codes__info > div,
+.geography__title,
+.geography__info > div {
+  border-bottom: 1.5px solid #ff5c35;
 }
 
-.codes__title::before,
-.geography__title::before {
-  left: 0;
+.overview__info > div,
+.codes__info > div,
+.geography__info > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 14px;
 }
 
-.codes__title::after,
-.geography__title::after {
-  right: 0;
+.overview__info > div:last-child,
+.codes__info > div:last-child,
+.geography__info > div:last-child {
+  border-bottom: none;
 }
 
-.codes__info tbody tr td {
-  width: 100%;
-  text-align: center;
+.overview__info > div div:last-child,
+.codes__info > div div:last-child,
+.geography__info > div div:last-child {
+  color: #ff5c35;
+  font-weight: 700;
 }
 
-.geography__title::before,
-.geography__title::after {
-  width: 25%;
-}
-
-@media (min-width: 500px) {
-  .overview__info tbody tr td,
-  .geography__info tbody tr td {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-@media (min-width: 800px) {
-  .main > div {
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-  }
+.geography__info {
+  margin-bottom: 0;
 }
