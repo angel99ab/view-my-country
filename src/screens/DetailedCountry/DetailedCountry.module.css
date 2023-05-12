@@ -25,9 +25,10 @@
 .overview__info,
 .codes__info,
 .geography__info {
+  margin-bottom: 40px;
   border-radius: 8px;
   box-shadow: rgba(219, 208, 214, 0.32) 2px 2px 8px 2px;
-  margin-bottom: 40px;
+  background-color: #fff;
 }
 
 .overview__title,

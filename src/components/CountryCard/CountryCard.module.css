@@ -1,10 +1,11 @@
 .card {
-  /* background-color: #eee; */
+  background-color: #fff;
   padding: 0px;
   text-decoration: none;
   color: #000;
   border-radius: 0.25em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(219, 208, 214, 0.32) 2px 2px 8px 2px;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
