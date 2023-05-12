@@ -26,6 +26,11 @@ function Home() {
       });
   }, []);
 
+  let randomCountryFormatted = randomCountry
+    ?.toLowerCase()
+    .split(' ')
+    .join('-');
+
   return (
     <>
       <Header />
@@ -46,7 +51,7 @@ function Home() {
             <Link
               className={`${styles.introduction__button}
                         ${styles.introduction__buttonOutlined}`}
-              to={`/countries/${randomCountry}`}
+              to={`/countries/${randomCountryFormatted}`}
               state={{ originalName: randomCountry }}
             >
               RANDOM COUNTRY
