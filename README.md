@@ -24,8 +24,11 @@ Go to the parent folder named "view-my-country" and execute the next script `npm
 
 ## Technologies
 
+- <a href="https://nodejs.org/en" target="_blank">Nodejs</a>
 - <a href="https://www.npmjs.com/" target="_blank">npm</a>
 - <a href="https://react.dev/" target="_blank">Reactjs</a>
+- <a href="https://reactrouter.com/en/main" target="_blank">React Router</a>
+- <a href="https://axios-http.com/" target="_blank">Axios</a>
 
 ## License
 
