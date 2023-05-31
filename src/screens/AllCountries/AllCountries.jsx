@@ -39,7 +39,8 @@ function AllCountries() {
         );
       })
       .catch(function (error) {
-        setIsLoaded(true);
+        setIsLoaded(false);
+        console.log(error);
       });
   }, []);
 
